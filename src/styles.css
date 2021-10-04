@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+[data-user-charm]:before {
+  content:attr(data-user-charm);
+  display:inline-block;
+  font-size:1em;
+  width:2.5em;
+  height:2.5em;
+  line-height:2.25em;
+  text-align:center;
+  vertical-align:middle;
+  border-radius:50%;
+  /* background:plum; */
+  border: 2px solid white;
+  margin-right:.5em;
+  color:white;
+  }
+
+  [data-user-charm-dark]:before {
+  content:attr(data-user-charm-dark);
+  display:inline-block;
+  font-size:1em;
+  width:2.5em;
+  height:2.5em;
+  line-height:2.25em;
+  text-align:center;
+  vertical-align:middle;
+  border-radius:50%;
+  /* background:plum; */
+  border: 2px solid black;
+  margin-right:.5em;
+  color:black;
+  }
+

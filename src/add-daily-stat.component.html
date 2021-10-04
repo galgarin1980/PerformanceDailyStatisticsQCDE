@@ -1,0 +1,87 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
+        <!-- Start -->
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">Event Date</label>
+            <div class="col-sm-9">
+                <input type="date" class="form-control form-control-sm" formControlName="EventDate">
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">Region</label>
+            <div class="col-sm-9">
+                <select class="form-select form-select-sm" (change)="changeRegion($event)" formControlName="Region">
+                    <option value="" disabled>Choose a Region</option>
+                    <option *ngFor="let r of regions" [ngValue]="r">{{r}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">Role</label>
+            <div class="col-sm-9">
+                <select class="form-select form-select-sm" (change)="changeRole($event)" formControlName="Role">
+                    <option value="" disabled>Choose a Role</option>
+                    <option *ngFor="let r of roles" [ngValue]="r">{{r}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">Encounter Count</label>
+            <div class="col-sm-9">
+                <input type="number" value="0" class="form-control form-control-sm" formControlName="EncounterCount">
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">AMP Count</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control form-control-sm" formControlName="AmpCount">
+            </div>
+        </div>
+        
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">AMP Time (in hours)</label>
+            <div class="col-sm-9">
+                <input type="number" value="0" class="form-control form-control-sm" formControlName="AmpTime">
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">Talix Time (in hours)</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control form-control-sm" formControlName="TalixRetro">
+            </div>
+        </div>
+        
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">Meeting Time (in hours)</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control form-control-sm" formControlName="MeetingTime">
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">Special Project (in hours)</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control form-control-sm" formControlName="SpecialProject">
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">Other Time (in hours)</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control form-control-sm" formControlName="OtherTime">
+            </div>
+        </div>
+        
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label col-form-label-sm">Comment</label>
+            <div class="col-sm-9">
+                <textarea class="form-control form-control-sm" style="height: 100px"
+                    formControlName="Comment"></textarea>
+            </div>
+        </div>
+        <!-- End -->
+        <div class="d-grid">
+            <button type="submit" class="btn btn-sm btn-primary" [disabled]="!form.valid">Submit
+                ({{formHandler.formType|async}})</button>
+        </div>
+    </form>
+   
+</div>
