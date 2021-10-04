@@ -54,29 +54,64 @@ export class AddDailyStatComponent implements OnInit {
         this.form.controls['Username'].setValue(obj.Username);
         this.form.controls['Region'].setValue(obj.Region);
         this.form.controls['Role'].setValue(obj.Role);
-        this.form.controls['AmpCount'].setValue(obj.AmpCount);
-        this.form.controls['AmpTime'].setValue(obj.AmpTime);
-        this.form.controls['TalixRetro'].setValue(obj.TalixRetro);
-        this.form.controls['EncounterCount'].setValue(obj.EncounterCount);
-        this.form.controls['MeetingTime'].setValue(obj.MeetingTime);
-        this.form.controls['SpecialProject'].setValue(obj.SpecialProject);
-        this.form.controls['OtherTime'].setValue(obj.OtherTime);
+
+        if (obj.AmpCount == null){
+        this.form.controls['AmpCount'].setValue(0);
+        }
+        else{ this.form.controls['AmpCount'].setValue(obj.AmpCount);
+        }
+        if (obj.AmpTime == null){
+          this.form.controls['AmpTime'].setValue(0);
+        }
+        else {
+          this.form.controls['AmpTime'].setValue(obj.AmpTime);
+        }
+        if (obj.TalixRetro == null){
+          this.form.controls['TalixRetro'].setValue(0);
+        }
+        else {
+          this.form.controls['TalixRetro'].setValue(obj.TalixRetro);
+        }
+        if (obj.EncounterCount == null){
+          this.form.controls['EncounterCount'].setValue(0);
+        }
+        else {
+          this.form.controls['EncounterCount'].setValue(obj.EncounterCount);
+        }
+        if (obj.MeetingTime == null){
+          this.form.controls['MeetingTime'].setValue(0);
+        }
+        else {
+          this.form.controls['MeetingTime'].setValue(obj.MeetingTime);
+        }
+        if (obj.SpecialProject == null){
+          this.form.controls['SpecialProject'].setValue(0);
+        }
+        else {
+          this.form.controls['SpecialProject'].setValue(obj.SpecialProject);
+        }
+        if (obj.OtherTime == null){
+          this.form.controls['OtherTime'].setValue(0);
+        }
+        else {
+          this.form.controls['OtherTime'].setValue(obj.OtherTime);
+        }
+        
         this.form.controls['Comment'].setValue(obj.Comment);
         this.form.updateValueAndValidity();
       }
     });
+    
   }
-
-  ngAfterContentInit(){
-    this.form.controls['AmpCount'].setValue(0);
-    this.form.updateValueAndValidity();
-  }
+ 
   changeRegion(region: any) {
     console.log("region is... ", region);
+    
   }
 
   changeRole(role: any) {
     console.log("role is... ", role);
+    
   }
 
   onSubmit() {
