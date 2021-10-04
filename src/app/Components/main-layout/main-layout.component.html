@@ -1,0 +1,43 @@
+<div id="page-container">
+    <header class="card-header bg-primary bg-gradient text-white p-2">
+        <div class="container d-flex justify-content-between">
+            <H2 style="text-shadow: 2px 2px #000;">Performance Daily Statistics</H2>
+            <div>&nbsp;</div>
+            
+            <div id="btn-profile" class="dropdown-toggle d-xl-inline-flex align-items-center" data-bs-toggle="dropdown">
+                <app-user-card option="name" background="dark"></app-user-card>
+            </div>
+
+            <div class="dropdown-menu dropdown-menu-end" class="dropdown-menu" aria-labelledby="btn-profile"
+                style="width: 300px; font-size: .75rem;">
+                <app-user-card option="dropdown"></app-user-card>
+                <div class="dropdown-divider"></div>
+                <a id="adminLink" class="disabled dropdown-item" href="#">QCDE Dashboard (Under Const.)</a>
+                <a class="dropdown-item" href="https://analytics.geisinger.edu" target="_blank">Geisinger Analytics Hub</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"
+                    href="https://geisingerprod.service-now.com/sp?id=sc_category&sys_id=7bb9286adbd0c41088deb5b9689619d3&catalog_id=-1"
+                    target="_blank">Request change
+                    <!--BIAA Analytics Intake-->
+                </a>
+                <a class="dropdown-item"
+                    href="https://geisingerprod.service-now.com/nav_to.do?uri=%2Fincident.do%3Fsys_id%3D-1%26sysparm_query%3Dactive%3Dtrue%26sysparm_stack%3Dincident_list.do%3Fsysparm_query%3Dactive%3Dtrue"
+                    target="_blank">Report a Bug
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="logout()">Sign out</a>
+            </div>
+        </div>
+    </header>
+            
+    <section class="card" style="padding-bottom: 2.5rem; height:90vh;">
+        
+        <router-outlet></router-outlet>
+
+    </section>
+          
+
+    <footer id="footer" class="d-flex justify-content-center bg-secondary bg-gradient text-white">
+        <div class="d-flex align-items-center" style="font-size:12px">&copy; 2021 Geisinger - {{app}} - {{version}} - {{build}}</div>
+    </footer>
+</div>

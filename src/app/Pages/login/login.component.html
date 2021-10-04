@@ -1,0 +1,36 @@
+<div class="container-fluid" style="display:flex; height: 99vh; justify-content:center;
+    align-items: center;">
+    <div class="container" style="padding-bottom:200px">
+        <div class="card col-md-4 mt-3 mx-auto">
+            <div class="card-body">
+                <h4 class="card-title text-center"><i class="bi bi-person-circle" style="font-size: 2.5em;"></i> <i
+                        class="fa fa-user-circle fa-2x"></i>
+                </h4>
+                <h4 class="text-center font-weight-normal mb-3">Log in to {{app}} Version {{version}} {{build}}</h4>
+
+                <div>
+                    <div class="text-danger" *ngIf="error"><small><strong>{{errorMsg}}</strong></small></div>
+                    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+                        <div class="form-group">
+                            <label for="username" class="font-weight-bold small">Username</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="username"
+                                autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold small">Password</label>
+                            <input #passwordRef type="password" class="form-control form-control-sm"
+                                formControlName="password">
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary btn-sm col-12" [disabled]="loginForm.invalid">
+                                <span [hidden]="loading">Sign in</span>
+                                <span [hidden]="!loading"><span class="spinner-border spinner-border-sm"></span>
+                                    Loading...</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

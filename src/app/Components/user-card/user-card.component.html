@@ -1,0 +1,36 @@
+<div [ngSwitch]="option">
+
+    <div *ngSwitchCase="'name'">
+        <!--<div #userCharm data-user-charm="">--><div>{{user.First_Name}} {{user.Last_Name}}</div>
+    </div>
+
+    <div *ngSwitchCase="'dropdown'">
+        <div class="card m-1 d-flex align-items-center">
+           <!-- <div #userCharm data-user-charm="" style="font-size:x-large"></div>-->
+            <div lass="d-flex card-body align-items-center">
+                <h5 class="card-title">{{user.First_Name}} {{user.Last_Name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{user.Department? user.Department:'Department'}}</h6>
+            </div>
+        </div>
+    </div>
+
+
+    <div *ngSwitchDefault>
+        <!-- Default View is the Full Card Option  -->
+        <div class="card container-fluid">
+            <div class="d-flex card-body p-1 gap-3 align-items-center">
+              <!--  <div #userCharm data-user-charm="" style="font-size: 1.75rem;"></div>
+                 <img src="assets/img_avatar_neutral.png" width="100px;" height="100px;" class="rounded mx-auto d-block"
+            alt="generic img"> -->
+                <div>
+                    <h5 class="card-title">{{user.First_Name}} {{user.Last_Name}}
+                        ({{user.Email}})</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{user.Department? user.Department:'Department'}}</h6>
+                    <p class="card-text small"> {{user.Office}}</p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

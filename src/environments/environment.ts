@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  app_name: 'Performance Daily Statistics',
+  build: 'Dev',
+  version: "1.0.0",
+  authServicePath: 'http://localhost:4200'
+  //authServicePath: 'https://eimweb4tst/gmltest/analyticsweb/QCDE_Performance/app'
 };
 
 /*
