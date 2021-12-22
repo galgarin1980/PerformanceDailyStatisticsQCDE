@@ -30,6 +30,7 @@ export class AddDailyStatComponent implements OnInit {
       AmpTime: new FormControl('Enter your time', Validators.required),
       TalixRetro: new FormControl('Enter your time', Validators.required),
       EncounterCount: new FormControl('Enter your time', Validators.required),
+      GoalsTrainingTime: new FormControl('Enter your time', Validators.required),
       MeetingTime: new FormControl('Enter your time', Validators.required),
       SpecialProject: new FormControl('Enter your time', Validators.required),
       OtherTime: new FormControl('Enter your time', Validators.required),
@@ -77,6 +78,12 @@ export class AddDailyStatComponent implements OnInit {
         }
         else {
           this.form.controls['EncounterCount'].setValue(obj.EncounterCount);
+        }
+        if (obj.GoalsTrainingTime == null){
+          this.form.controls['GoalsTrainingTime'].setValue(0);
+        }
+        else {
+          this.form.controls['GoalsTrainingTime'].setValue(obj.GoalsTrainingTime);
         }
         if (obj.MeetingTime == null){
           this.form.controls['MeetingTime'].setValue(0);
@@ -128,6 +135,7 @@ export class AddDailyStatComponent implements OnInit {
     obj.AmpTime = this.form.controls['AmpTime'].value;
     obj.TalixRetro = this.form.controls['TalixRetro'].value;
     obj.EncounterCount = this.form.controls['EncounterCount'].value;
+    obj.GoalsTrainingTime = this.form.controls['GoalsTrainingTime'].value;
     obj.MeetingTime = this.form.controls['MeetingTime'].value;
     obj.SpecialProject = this.form.controls['SpecialProject'].value;
     obj.OtherTime = this.form.controls['OtherTime'].value;

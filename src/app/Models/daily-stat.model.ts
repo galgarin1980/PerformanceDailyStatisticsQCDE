@@ -8,6 +8,7 @@ export class DailyStat {
     AmpTime?: number;
     TalixRetro?: number;
     EncounterCount?: number;
+    GoalsTrainingTime?: number;
     MeetingTime?: number;
     OtherTime?: number;
     SpecialProject?: number;

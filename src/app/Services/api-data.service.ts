@@ -15,8 +15,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   providedIn: 'root'
 })
 export class ApiDataService {
-  private connectionString: string = "https://localhost:44365/api/Temp"; //<-- Data API
-  //private connectionString: string = "https://eimweb4tst/gmldev/ga_Development/QCDE_Performance_API/api/Temp"; //<-- Data API
+  //private connectionString: string = "https://localhost:44365/api/Temp"; //<-- Data API
+  private connectionString: string = "https://eimweb4tst/gmldev/ga_Development/QCDE_Performance_API/api/Temp"; //<-- Data API
   public user: User = new User;
   public formHandle: FormHandlerService = new FormHandlerService;
   
